@@ -6,6 +6,7 @@
 http://mocobeta-backup.tumblr.com/post/131952293527/janome-026
 
 ## Janomeを使ってみるツール
+文章を入力するとJanomeを使って形態素解析を行い結果を表示するだけのアプリです
 ![app_ver1.0]
 [app_ver1.0]: ./image/janome-app_ver1.0.jpg
 
