@@ -17,6 +17,7 @@ import os
 import csv
 
 from PySide.QtGui import *
+
 from PySide.QtCore import *
 
 from janome.tokenizer import Tokenizer
