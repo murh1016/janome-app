@@ -8,6 +8,7 @@
 >http://mocobeta-backup.tumblr.com/post/115843098157/pure-python-janome
 
 ## Janomeの使い方
+[Janome v0.2 documentation](http://mocobeta.github.io/janome/)
     (venv) $ pip install janome
     (venv) $ python
     >>> from janome.tokenizer import Tokenizer
