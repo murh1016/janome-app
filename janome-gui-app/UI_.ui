@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>511</width>
-    <height>223</height>
+    <width>466</width>
+    <height>444</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,17 +19,21 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>TextLabel</string>
+        <string>形態素解析する文章を入力してください.</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string>フリースタイル信じてたら 韻辞典は禁じ手 あくまで参考</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>TextLabel</string>
+        <string>解析された文章の要素が表示されます</string>
        </property>
       </widget>
      </item>
@@ -41,21 +45,21 @@
        <item>
         <widget class="QPushButton" name="pushButton">
          <property name="text">
-          <string>PushButton</string>
+          <string>save</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_2">
          <property name="text">
-          <string>PushButton</string>
+          <string>clear</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_3">
          <property name="text">
-          <string>PushButton</string>
+          <string>close</string>
          </property>
         </widget>
        </item>
@@ -83,8 +87,107 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>window</sender>
+   <signal>loaded_words(QString)</signal>
+   <receiver>textBrowser</receiver>
+   <slot>append(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>2</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>36</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>window</sender>
+   <signal>refresh_words()</signal>
+   <receiver>textBrowser</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>3</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>15</x>
+     <y>315</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>window</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>454</x>
+     <y>431</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>465</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>textBrowser</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>281</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>window</receiver>
+   <slot>save_csv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>416</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>108</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
+  <signal>loaded_words(QString)</signal>
+  <signal>refresh_words()</signal>
   <slot>analysis_janome()</slot>
+  <slot>save_csv()</slot>
  </slots>
 </ui>

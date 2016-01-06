@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'UI_.ui'
 #
-# Created: Wed Jan 06 16:59:27 2016
+# Created: Wed Jan 06 21:37:33 2016
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,7 @@ from PySide import QtCore, QtGui
 class Ui_window(object):
     def setupUi(self, window):
         window.setObjectName("window")
-        window.resize(511, 223)
+        window.resize(466, 444)
         self.horizontalLayout = QtGui.QHBoxLayout(window)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.verticalLayout = QtGui.QVBoxLayout()
@@ -45,13 +45,20 @@ class Ui_window(object):
 
         self.retranslateUi(window)
         QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("textChanged(QString)"), window.analysis_janome)
+        QtCore.QObject.connect(window, QtCore.SIGNAL("loaded_words(QString)"), self.textBrowser.append)
+        QtCore.QObject.connect(window, QtCore.SIGNAL("refresh_words()"), self.textBrowser.clear)
+        QtCore.QObject.connect(self.pushButton_3, QtCore.SIGNAL("clicked()"), window.close)
+        QtCore.QObject.connect(self.pushButton_2, QtCore.SIGNAL("clicked()"), self.textBrowser.clear)
+        QtCore.QObject.connect(self.pushButton_2, QtCore.SIGNAL("clicked()"), self.lineEdit.clear)
+        QtCore.QObject.connect(self.pushButton, QtCore.SIGNAL("clicked()"), window.save_csv)
         QtCore.QMetaObject.connectSlotsByName(window)
 
     def retranslateUi(self, window):
         window.setWindowTitle(QtGui.QApplication.translate("window", "Form", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("window", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("window", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton.setText(QtGui.QApplication.translate("window", "PushButton", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton_2.setText(QtGui.QApplication.translate("window", "PushButton", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton_3.setText(QtGui.QApplication.translate("window", "PushButton", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("window", "形態素解析する文章を入力してください.", None, QtGui.QApplication.UnicodeUTF8))
+        self.lineEdit.setText(QtGui.QApplication.translate("window", "フリースタイル信じてたら 韻辞典は禁じ手 あくまで参考", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("window", "解析された文章の要素が表示されます", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushButton.setText(QtGui.QApplication.translate("window", "save", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushButton_2.setText(QtGui.QApplication.translate("window", "clear", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushButton_3.setText(QtGui.QApplication.translate("window", "close", None, QtGui.QApplication.UnicodeUTF8))
 
