@@ -8,8 +8,9 @@
 >http://mocobeta-backup.tumblr.com/post/115843098157/pure-python-janome
 
 ## Janomeの使い方
-[Janome v0.2 documentation](http://mocobeta.github.io/janome/ "Janome v0.2 documentation")
+公式がとても詳しいです[Janome v0.2 documentation](http://mocobeta.github.io/janome/ "Janome v0.2 documentation")
 
+使い方は簡単!!pipでインストールしてちゃちゃっとするだけ!!(作者様本当にありがとうございます)
 ```python
     (venv) $ pip install janome
     (venv) $ python
@@ -28,7 +29,8 @@
 ```
 
 ## Janomeを使ってみるツール
-文章を入力するとJanomeを使って形態素解析を行い結果を表示するだけのアプリです
+そこで形態素解析を使ってみたくPySideを使って簡単なアプリを作ってみました。
+文章を入力するとJanomeを使って形態素解析を行い結果を表示するだけのアプリです。
 ![app_ver1.0]
 [app_ver1.0]: ./image/janome-app_ver1.0.jpg
 
