@@ -8,7 +8,9 @@
 >http://mocobeta-backup.tumblr.com/post/115843098157/pure-python-janome
 
 ## Janomeの使い方
-[Janome v0.2 documentation](http://mocobeta.github.io/janome/)
+[Janome v0.2 documentation](http://mocobeta.github.io/janome/ "Janome v0.2 documentation")
+
+```python
     (venv) $ pip install janome
     (venv) $ python
     >>> from janome.tokenizer import Tokenizer
@@ -23,6 +25,7 @@
     もも  名詞,一般,*,*,*,*,もも,モモ,モモ
     の    助詞,連体化,*,*,*,*,の,ノ,ノ
     うち  名詞,非自立,副詞可能,*,*,*,うち,ウチ,ウチ
+```
 
 ## Janomeを使ってみるツール
 文章を入力するとJanomeを使って形態素解析を行い結果を表示するだけのアプリです
